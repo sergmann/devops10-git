@@ -1,0 +1,14 @@
+---
+- hosts: servers
+  become: true
+  tasks:
+  - name: check status rsyslog application
+    shell: systemctl status rsyslog
+
+- hosts: servers
+  become: true
+  tasks:
+  - name: wget is installed
+    yum: name=wget state=installed
+...
+
